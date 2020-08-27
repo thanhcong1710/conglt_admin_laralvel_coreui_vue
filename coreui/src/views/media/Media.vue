@@ -1,6 +1,6 @@
 <template>
   <CRow>
-    <CCol col="12" xl="6">
+    <CCol col="12" xl="12">
       <transition name="slide">
         <CCard>
           <CCardBody>
@@ -45,38 +45,19 @@
                     <CButton color="primary" @click="renameOpenForm(item.id, item.type)">
                         Rename
                     </CButton>
-                  </td>
-                  <td>
                     <CButton color="primary" @click="moveOpenForm(item.id, item.type, item.name)">
                         Move
                     </CButton>
-                  </td>
-                  <td v-if="item.type == 'file'">
-                    <CButton color="primary" @click="copyFile(item.id)">
+                    <CButton v-if="item.type == 'file'" color="primary" @click="copyFile(item.id)">
                         Copy
                     </CButton>
-                  </td>
-                  <td v-else>
-
-                  </td>
-                  <td v-if="item.type == 'file'">
-                    <CButton color="primary" @click="downloadFile(item.id, item.name)">
+                    <CButton v-if="item.type == 'file'" color="primary" @click="downloadFile(item.id, item.name)">
                         Download
                     </CButton>
-                  </td>
-                  <td v-else>
-
-                  </td>
-                  <td v-if="item.type == 'file'">
-                    <CButton v-if="item.mime.includes('image/')" color="success" @click="openCroppFileModal(item.id)">
+                    <CButton v-if="item.type == 'file' && item.mime.includes('image/')" color="success" @click="openCroppFileModal(item.id)">
                         Cropp
                     </CButton>
-                  </td>
-                  <td v-else>
-
-                  </td>
-                  <td>
-                    <CButton color="danger" @click="openDeleteDialog(item.id, item.type, item.name)">
+                    <CButton v-if="item.type == 'file'" color="danger" @click="openDeleteDialog(item.id, item.type, item.name)">
                         Delete
                     </CButton>
                   </td>
@@ -87,7 +68,7 @@
         </CCard>
       </transition>
     </CCol>
-    <CCol col="12" xl="6">
+    <CCol col="12" xl="12">
       <transition name="slide">
         <CCard v-if="rightCard == 'fileInfo'">
           <CCardBody>
