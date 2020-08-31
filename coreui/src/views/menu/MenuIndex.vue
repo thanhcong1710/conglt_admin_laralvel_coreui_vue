@@ -5,7 +5,7 @@
         <CCard>
           <CCardBody>
             <h4>
-              Menus
+              Menus {{ $t('passwords.reset') }}
             </h4>
               <CButton color="primary" @click="addMenu()" class="mb-3">Add Menu</CButton>
               <CDataTable

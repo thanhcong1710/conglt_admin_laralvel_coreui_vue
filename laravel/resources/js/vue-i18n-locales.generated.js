@@ -126,5 +126,13 @@ export default {
             },
             "attributes": []
         }
+    },
+    "vi": {
+        "passwords": {
+            "reset": "Mật khẩu của bạn đã được thiết lập lại!",
+            "sent": "We have e-mailed your password reset link!",
+            "token": "This password reset token is invalid.",
+            "user": "We can't find a user with that e-mail address."
+        }
     }
 }
