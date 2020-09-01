@@ -13,9 +13,6 @@
             :items="items" 
             :fields="fields"
           >
-            <template slot="value" slot-scope="data">
-              <strong>{{data.item.value}}</strong>
-            </template>
           </CDataTable>  
         </CCardBody>
         <CCardFooter>

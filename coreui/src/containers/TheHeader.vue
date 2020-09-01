@@ -19,7 +19,10 @@
     <CHeaderNav class="mr-4">
       <CHeaderNavItem class="d-md-down-none mx-2">
         <CHeaderNavLink>
-         <CIcon name="cil-drop"/>
+          <select v-model="language" @change="changeLanguage">
+            <option value="vi">VI</option>
+            <option value="en">EN</option>
+          </select>
         </CHeaderNavLink>
       </CHeaderNavItem>
       <CHeaderNavItem class="d-md-down-none mx-2">
@@ -59,6 +62,18 @@ export default {
   components: {
     TheHeaderDropdownAccnt,
     CMenu
+  },
+  data() {
+      return {
+          language: this.$i18n.locale
+      };
+  },
+  methods: {
+    changeLanguage() {
+        localStorage.setItem('language', this.language);
+        this.$i18n.locale = this.language;
+        fetch(`api/language/${this.language}?token=` + localStorage.getItem("api_token"));
+    }
   }
 }
 </script>
