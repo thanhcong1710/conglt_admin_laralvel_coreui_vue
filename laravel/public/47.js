@@ -290,25 +290,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -719,7 +700,7 @@ var render = function() {
     [
       _c(
         "CCol",
-        { attrs: { col: "12", xl: "6" } },
+        { attrs: { col: "12", xl: "12" } },
         [
           _c(
             "transition",
@@ -886,14 +867,8 @@ var render = function() {
                                           "\n                      Rename\n                  "
                                         )
                                       ]
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  [
+                                    ),
+                                    _vm._v(" "),
                                     _c(
                                       "CButton",
                                       {
@@ -913,16 +888,10 @@ var render = function() {
                                           "\n                      Move\n                  "
                                         )
                                       ]
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                item.type == "file"
-                                  ? _c(
-                                      "td",
-                                      [
-                                        _c(
+                                    ),
+                                    _vm._v(" "),
+                                    item.type == "file"
+                                      ? _c(
                                           "CButton",
                                           {
                                             attrs: { color: "primary" },
@@ -938,16 +907,10 @@ var render = function() {
                                             )
                                           ]
                                         )
-                                      ],
-                                      1
-                                    )
-                                  : _c("td"),
-                                _vm._v(" "),
-                                item.type == "file"
-                                  ? _c(
-                                      "td",
-                                      [
-                                        _c(
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    item.type == "file"
+                                      ? _c(
                                           "CButton",
                                           {
                                             attrs: { color: "primary" },
@@ -966,63 +929,52 @@ var render = function() {
                                             )
                                           ]
                                         )
-                                      ],
-                                      1
-                                    )
-                                  : _c("td"),
-                                _vm._v(" "),
-                                item.type == "file"
-                                  ? _c(
-                                      "td",
-                                      [
-                                        item.mime.includes("image/")
-                                          ? _c(
-                                              "CButton",
-                                              {
-                                                attrs: { color: "success" },
-                                                on: {
-                                                  click: function($event) {
-                                                    return _vm.openCroppFileModal(
-                                                      item.id
-                                                    )
-                                                  }
-                                                }
-                                              },
-                                              [
-                                                _vm._v(
-                                                  "\n                      Cropp\n                  "
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    item.type == "file" &&
+                                    item.mime.includes("image/")
+                                      ? _c(
+                                          "CButton",
+                                          {
+                                            attrs: { color: "success" },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.openCroppFileModal(
+                                                  item.id
                                                 )
-                                              ]
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                      Cropp\n                  "
                                             )
-                                          : _vm._e()
-                                      ],
-                                      1
-                                    )
-                                  : _c("td"),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  [
-                                    _c(
-                                      "CButton",
-                                      {
-                                        attrs: { color: "danger" },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.openDeleteDialog(
-                                              item.id,
-                                              item.type,
-                                              item.name
-                                            )
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                      Delete\n                  "
+                                          ]
                                         )
-                                      ]
-                                    )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    item.type == "file"
+                                      ? _c(
+                                          "CButton",
+                                          {
+                                            attrs: { color: "danger" },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.openDeleteDialog(
+                                                  item.id,
+                                                  item.type,
+                                                  item.name
+                                                )
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                      Delete\n                  "
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e()
                                   ],
                                   1
                                 )
@@ -1046,7 +998,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "CCol",
-        { attrs: { col: "12", xl: "6" } },
+        { attrs: { col: "12", xl: "12" } },
         [
           _c(
             "transition",

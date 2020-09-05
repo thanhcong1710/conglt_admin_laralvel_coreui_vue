@@ -194,7 +194,7 @@ var render = function() {
     [
       _c(
         "CCol",
-        { attrs: { col: "12", xl: "6" } },
+        { attrs: { col: "12", xl: "12" } },
         [
           _c(
             "transition",
@@ -206,7 +206,13 @@ var render = function() {
                   _c(
                     "CCardBody",
                     [
-                      _c("h4", [_vm._v("\n            Menus\n          ")]),
+                      _c("h4", [
+                        _vm._v(
+                          "\n            Menus " +
+                            _vm._s(_vm.$t("passwords.reset")) +
+                            "\n          "
+                        )
+                      ]),
                       _vm._v(" "),
                       _c(
                         "CButton",

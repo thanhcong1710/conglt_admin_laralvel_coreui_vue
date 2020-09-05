@@ -113,9 +113,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'User',
@@ -195,7 +192,7 @@ var render = function() {
     [
       _c(
         "CCol",
-        { attrs: { col: "12", lg: "6" } },
+        { attrs: { col: "12", lg: "12" } },
         [
           _c(
             "CCard",
@@ -218,17 +215,7 @@ var render = function() {
                       fixed: "",
                       items: _vm.items,
                       fields: _vm.fields
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "value",
-                        fn: function(data) {
-                          return [
-                            _c("strong", [_vm._v(_vm._s(data.item.value))])
-                          ]
-                        }
-                      }
-                    ])
+                    }
                   })
                 ],
                 1

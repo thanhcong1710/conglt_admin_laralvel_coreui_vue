@@ -713,6 +713,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -720,6 +733,18 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     TheHeaderDropdownAccnt: _TheHeaderDropdownAccnt__WEBPACK_IMPORTED_MODULE_1__["default"],
     CMenu: _Menu__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      language: this.$i18n.locale
+    };
+  },
+  methods: {
+    changeLanguage: function changeLanguage() {
+      localStorage.setItem('language', this.language);
+      this.$i18n.locale = this.language;
+      fetch("api/language/".concat(this.language, "?token=") + localStorage.getItem("api_token"));
+    }
   }
 });
 
@@ -1320,6 +1345,65 @@ var render = function() {
         "CHeaderNav",
         { staticClass: "mr-4" },
         [
+          _c(
+            "CHeaderNavItem",
+            { staticClass: "d-md-down-none mx-2" },
+            [
+              _c("CHeaderNavLink", [
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.language,
+                        expression: "language"
+                      }
+                    ],
+                    on: {
+                      change: [
+                        function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.language = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        },
+                        _vm.changeLanguage
+                      ]
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "vi" } }, [_vm._v("VI")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "en" } }, [_vm._v("EN")])
+                  ]
+                )
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "CHeaderNavItem",
+            { staticClass: "d-md-down-none mx-2" },
+            [
+              _c(
+                "CHeaderNavLink",
+                [_c("CIcon", { attrs: { name: "cil-envelope-open" } })],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
           _c(
             "CHeaderNavItem",
             { staticClass: "d-md-down-none mx-2" },

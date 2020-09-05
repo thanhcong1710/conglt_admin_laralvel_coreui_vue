@@ -274,7 +274,7 @@ var render = function() {
     [
       _c(
         "CCol",
-        { attrs: { col: "12", xl: "6" } },
+        { attrs: { col: "12", xl: "12" } },
         [
           _c(
             "transition",
